@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-List<Track> trackFromJson(String str) =>
-    List<Track>.from(json.decode(str).map((x) => Track.fromJson(x)));
+List<Track> trackFromJson(List str) =>
+    List<Track>.from(str.map((x) => Track.fromJson(x)));
 
 String trackToJson(List<Track> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

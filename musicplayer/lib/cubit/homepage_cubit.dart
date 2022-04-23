@@ -11,9 +11,12 @@ class HomepageCubit extends Cubit<HomepageState> {
     this.repository,
   ) : super(Initial());
 
-  void loadTracks() {
+  Future<void> loadTracks() async {
+    print('fetching tracks');
+    await Future.delayed(const Duration(seconds: 0));
     emit(Loading());
-    // Fetch from repository
-    emit(Loaded(tracks: []));
+    final tracks = await repository.getTracks();
+    emit(Loaded(tracks: tracks));
+    print('Loaded');
   }
 }

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import '../models/track.dart';
@@ -13,14 +14,18 @@ class TracksRepositoryImpl implements TracksRepository {
     required this.client,
   });
 
-  static const URL = '';
+  static const URL =
+      'https://api.musixmatch.com/ws/1.1/chart.tracks.get?apikey=2d782bc7a52a41ba2fc1ef05b9cf40d7';
   @override
   Future<List<Track>> getTracks() async {
     try {
       final http.Response response = await client.get(Uri.parse(URL));
       final body = response.body;
-      return [];
-      print(body);
+      final decoded = json.decode(body);
+      final tracks = trackFromJson(decoded['message']['body']['track_list']);
+      // print(tracks);
+
+      return tracks;
     } catch (ex) {
       print(ex);
     }

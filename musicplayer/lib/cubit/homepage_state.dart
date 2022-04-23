@@ -8,7 +8,7 @@ class Initial extends HomepageState {}
 class Loading extends HomepageState {}
 
 class Loaded extends HomepageState {
-  List<Track> tracks;
+  final List<Track> tracks;
   Loaded({
     required this.tracks,
   });
