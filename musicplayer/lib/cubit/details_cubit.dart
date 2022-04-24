@@ -15,7 +15,8 @@ class DetailsCubit extends Cubit<DetailsState> {
     this.repository,
   ) : super(DetailsState(pageStatus: PageStatus.Initial, selectedTrack: -1));
 
-  void setTrack(int id) => emit(state.copyWith(selectedTrack: id));
+  void setTrack(int id) =>
+      emit(state.copyWith(selectedTrack: id, pageStatus: PageStatus.Initial));
 
   void loadLyric() async {
     emit(state.copyWith(loadingLyrics: true));
