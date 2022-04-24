@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:musicplayer/cubit/details_cubit.dart';
 import 'package:musicplayer/cubit/homepage_cubit.dart';
+import 'package:musicplayer/screens/details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,6 +30,14 @@ class HomeScreen extends StatelessWidget {
                 title: Text(state.tracks[ind].track.trackName),
                 subtitle: Text(state.tracks[ind].track.albumName),
                 trailing: Text(state.tracks[ind].track.artistName),
+                onTap: () async {
+                  await Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => DetailsScreen(
+                          selectedTrack: state.tracks[ind].track.trackId),
+                    ),
+                  );
+                },
               ),
               separatorBuilder: (context, index) => const Divider(
                 thickness: 3,

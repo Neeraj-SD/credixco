@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:musicplayer/screens/details_screen.dart';
 import 'package:musicplayer/screens/home_screen.dart';
 import './injection_container.dart' as di;
+import 'cubit/details_cubit.dart';
 import 'cubit/homepage_cubit.dart';
 
 void main() async {
