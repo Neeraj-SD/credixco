@@ -1,13 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:musicplayer/cubit/details_cubit.dart';
-import 'package:musicplayer/network/network_info.dart';
-import 'package:musicplayer/repository/tracks_repository.dart';
-import 'package:musicplayer/router/app_router.dart';
 
+import 'cubit/details_cubit.dart';
 import 'cubit/homepage_cubit.dart';
 import 'cubit/internet_cubit.dart';
+import '../core/network/network_info.dart';
+import 'repository/tracks_repository.dart';
+import './utils/router/app_router.dart';
 
 final sl = GetIt.instance;
 

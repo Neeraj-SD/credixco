@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicplayer/screens/details_screen.dart';
 
-import '../screens/home_screen.dart';
+import '../../screens/home_screen.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routeSettings) {

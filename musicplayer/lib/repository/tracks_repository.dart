@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:musicplayer/models/lyric.dart';
 
-import '../Errors/failure.dart';
+import '../core/Errors/failure.dart';
 import '../models/track.dart';
 import 'package:http/http.dart' as http;
 
